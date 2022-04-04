@@ -21,18 +21,18 @@ class _State extends State<MyApp> {
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly, //How container are separately
             children: <Widget>[
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 160.0),
+                margin: EdgeInsets.symmetric(vertical: 19.0, horizontal: 160.0),
                 child: Image(image: AssetImage('assets/images/ear_logo.jpg')),
               ),
 
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
 
               Container(
                 width: 150,
                 child:Text(
-                    'Hearing Test Welcome',
+                    'Ear Check',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:23,
@@ -49,7 +49,7 @@ class _State extends State<MyApp> {
 
               Container(
                 child:Text(
-                    'An audiometry test on your phone',
+                    'Audiometry test',
                     style: TextStyle(
                         fontSize:20,
                         color: Color.fromRGBO(104, 178, 160, 1),
