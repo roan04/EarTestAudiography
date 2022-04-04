@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(MyApp());
@@ -94,7 +95,9 @@ class _State extends State<MyApp> {
                         textStyle: const TextStyle(fontSize: 20),
                       ),
                       onPressed: () {
-                        print("Pressed");
+                        final player = AudioCache();
+                        player.play('welcome.mp3');
+
                       },
                       child: const Text('Get Started'),
                     ),
