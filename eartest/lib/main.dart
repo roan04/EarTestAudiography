@@ -5,9 +5,12 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-
+class  MyApp extends StatefulWidget {
   @override
+  State<MyApp> createState() => _State();
+}
+
+class _State extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -18,24 +21,24 @@ class MyApp extends StatelessWidget {
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly, //How container are separately
             children: <Widget>[
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 160.0),
-                  child: Image(image: AssetImage('assets/images/ear_logo.jpg')),
+                margin: EdgeInsets.symmetric(vertical: 19.0, horizontal: 160.0),
+                child: Image(image: AssetImage('assets/images/ear_logo.jpg')),
               ),
 
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
 
               Container(
                 width: 150,
                 child:Text(
-                  'Hearing Test Welcome',
+                    'Ear Check',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize:23,
-                        color: Color.fromRGBO(39, 82, 112, 1),
-                        fontFamily: 'Roboto-Black',
-                        fontWeight:FontWeight.bold,
+                      fontSize:23,
+                      color: Color.fromRGBO(39, 82, 112, 1),
+                      fontFamily: 'Roboto-Black',
+                      fontWeight:FontWeight.bold,
                     )
                 ),
               ),
@@ -45,8 +48,8 @@ class MyApp extends StatelessWidget {
               ),
 
               Container(
-                  child:Text(
-                    'An audiometry test on your phone',
+                child:Text(
+                    'Audiometry test',
                     style: TextStyle(
                         fontSize:20,
                         color: Color.fromRGBO(104, 178, 160, 1),
@@ -115,21 +118,25 @@ class MyApp extends StatelessWidget {
               ),
 
               Container(
-                child: Text(
-                  'Sign In',
-                    style: TextStyle(
-                        fontSize:15,
-                        color: Color.fromRGBO(39, 82, 112, 1),
-                        fontFamily: 'Roboto-Black'
-                    )
+                child: TextButton(
+                  onPressed: () {
+                    print("Sign in clicked");
+                  },
+                  child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                          fontSize:16,
+                          color: Color.fromRGBO(39, 82, 112, 1),
+                          fontFamily: 'Roboto-Black'
+                      )
+                  ),
                 ),
               )
-           ],
+            ],
           ),
         ),
       ),
     );
-
   }
 }
 
