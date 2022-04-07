@@ -1,4 +1,6 @@
+import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:eartest/screen2.dart';
+import 'package:eartest/screen_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -62,21 +64,28 @@ class splashscreen extends StatelessWidget {
               const SizedBox(height: 60),
 
               ClipRRect(
-                borderRadius: BorderRadius.circular(12),
                 child: Stack(
                   children: <Widget>[
                     Positioned.fill(
                       child: Container(
-
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color(0xFF48A096),
-                              Color(0xFF60CB98),
-                              Color(0xFF72DC96),
+                          decoration: BoxDecoration(
+                            gradient: RadialGradient(
+                              center: Alignment(-0.884, -1.0),
+                              radius: 1.35,
+                              colors: [const Color(0xff7be495), const Color(0xff329d9c)],
+                              stops: [0.0, 1.0],
+                              transform: GradientXDTransform(
+                                  1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
+                            ),
+                            borderRadius: BorderRadius.circular(21.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0x36329d9c),
+                                offset: Offset(15, 15),
+                                blurRadius: 40,
+                              ),
                             ],
-                          ),
-                        ),
+                          )
                       ),
                     ),
                     TextButton(
@@ -100,11 +109,21 @@ class splashscreen extends StatelessWidget {
                         );
 
                       },
-                      child: const Text('Get Started'),
+                      child: const Text(
+                        'Get Started',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat-Bold',
+                          fontSize: 18,
+                          color: const Color(0xffffffff),
+                          height: 1.3846153846153846,
+                        ),
+                        textHeightBehavior:
+                        TextHeightBehavior(applyHeightToFirstAscent: false),
+                        textAlign: TextAlign.center,),
                     ),
                   ],
                 ),
-              ),
+              ), //Get Started button
 
               SizedBox(
                 height: 30.0,
