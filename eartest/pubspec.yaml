@@ -68,6 +68,11 @@ flutter:
      - assets/
      - assets/images/ear_logo.jpg
      - assets/images/splashlogo.jpg
+     - assets/images/iPhone 11 Pro Outline.png
+     - assets/images/CompoNotification.png
+     - assets/images/Notifications.png
+     - assets/images/Mask.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,6 @@
+import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:eartest/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './icons_arrows_previuos.dart';
@@ -16,12 +19,12 @@ class ScreenNotification extends StatelessWidget {
           Align(
             alignment: Alignment(0.0, 0.082),
             child: SizedBox(
-              width: 258.0,
+              width: 260.0,
               height: 517.0,
               child:
                   // Adobe XD layer: 'iPhone 11 Pro Outli…' (group)
                   Stack(
-                children: <Widget>[
+                  children: <Widget>[
                   SizedBox.expand(
                       child:
                           // Adobe XD layer: 'Combined Shape' (shape)
@@ -29,7 +32,8 @@ class ScreenNotification extends StatelessWidget {
                     _svg_ctp0f,
                     allowDrawingOutsideViewBox: true,
                     fit: BoxFit.fill,
-                  )),
+                  ),
+                  ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(16.8, 15.0, 16.2, 15.0),
                     child: SizedBox.expand(
@@ -71,7 +75,8 @@ class ScreenNotification extends StatelessWidget {
               'Turn on Notification',
               style: TextStyle(
                 fontFamily: 'Montserrat-Bold',
-                fontSize: 17,
+                fontSize: 18,
+                fontWeight:FontWeight.bold,
                 color: const Color(0xff205072),
                 height: 1.3529411764705883,
               ),
@@ -189,7 +194,7 @@ class ScreenNotification extends StatelessWidget {
                     height: 42.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: const AssetImage('assets/images/EarLogo.jpg'),
+                        image: const AssetImage('assets/images/ear_logo.jpg'),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -198,6 +203,8 @@ class ScreenNotification extends StatelessWidget {
               ],
             ),
           ),
+
+
           Pinned.fromPins(
             Pin(startFraction: 0.4324, endFraction: 0.4324),
             Pin(size: 16.0, middle: 0.9205),
@@ -322,26 +329,13 @@ class ScreenNotification extends StatelessWidget {
               ),
             ),
           ),
-          Pinned.fromPins(
-            Pin(size: 59.0, start: 58.5),
-            Pin(size: 33.5, middle: 0.3458),
-            child:
-                // Adobe XD layer: 'upperlogofinal' (shape)
-                Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: const AssetImage('assets/images/EarLogo.jpg'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),
+
           Pinned.fromPins(
             Pin(size: 13.0, start: 40.0),
             Pin(size: 12.0, start: 62.0),
             child:
                 // Adobe XD layer: 'Icons/ Arrows/ Prev…' (component)
-                IconsArrowsPreviuos(),
+                splashscreen(),
           ),
         ],
       ),
