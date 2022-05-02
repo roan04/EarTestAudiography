@@ -1,6 +1,8 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/login.dart';
 import 'package:eartest/screen2.dart';
 import 'package:eartest/screen_notification.dart';
+import 'package:eartest/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -22,7 +24,7 @@ class screen2 extends StatelessWidget {
               ),
 
               SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
 
               Container(
@@ -128,14 +130,14 @@ class screen2 extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context){
-                              return screen2();
+                              return login();
                             },
                           ),
                         );
 
                       },
                       child: const Text(
-                        'Get Started',
+                        'Turn on Notification',
                         style: TextStyle(
                           fontFamily: 'Montserrat-Bold',
                           fontSize: 18,
@@ -158,7 +160,16 @@ class screen2 extends StatelessWidget {
               Container(
                 child: TextButton(
                   onPressed: () {
-                    print("Sign in clicked");
+                    print("Skip this");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context){
+                          return login();
+                        },
+                      ),
+                    );
+
                   },
                   child: Text(
                       'Skip this',
