@@ -1,4 +1,5 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/login.dart';
 import 'package:eartest/screen2.dart';
 import 'package:eartest/screen_notification.dart';
 import 'package:flutter/material.dart';
@@ -143,6 +144,14 @@ class splashscreen extends StatelessWidget {
               Container(
                 child: TextButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context){
+                          return login();
+                        },
+                      ),
+                    );
                     print("Sign in clicked");
                   },
                   child: Text(
