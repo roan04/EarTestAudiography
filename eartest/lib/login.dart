@@ -1,4 +1,5 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/SignUp.dart';
 import 'package:eartest/screen2.dart';
 import 'package:eartest/screen_notification.dart';
 import 'package:eartest/splashscreen.dart';
@@ -15,45 +16,47 @@ class login extends StatelessWidget {
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-                color: Color.fromRGBO(104, 178, 160, 1)
+                color: Color.fromRGBO(255, 255, 255, 1.0)
             ),
 
           child: Column(
             crossAxisAlignment:  CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
+
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+
                   children: const[
-                    Text("Login",style: TextStyle(fontFamily: 'Montserrat-Bold',
-                      fontSize: 40,
-                      color: const Color(0xffffffff),
-                      height: 1.3846153846153846,),),
-                    SizedBox(height: 10,),
-                    Text("Welcome Back",style: TextStyle(fontFamily: 'Montserrat-Bold',
-                      fontSize: 20,
-                      color: const Color(0xffffffff),
-                      height: 1.3846153846153846,),),
+                    Image(image: AssetImage('assets/images/Mobile login-rafiki.png'), height: 250,
+
+                    ),
+                    Text('Login',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat-Bold',
+                        fontSize: 22,
+                        color: const Color(0xff69b39b),
+                        height: 1.3846153846153846,
+                      ),)
+
+
                   ],
                 ),
               ),
 
-              const SizedBox(height: 20),
+
 
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(60),topRight: Radius.circular(60)),
-                  ),
+
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.all(30),
+                      padding: const EdgeInsets.all(25),
                       child: Column(
                         children: [
-                          const SizedBox(height: 60,),
+                          const SizedBox(height: 1,),
                           // #email, #password
                           Container(
                             decoration: BoxDecoration(
@@ -180,20 +183,20 @@ class login extends StatelessWidget {
                             ),
                           ),//Forgot password
 
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 5),
 
 
                           Divider(
                             color: Colors.black,
                           ),
 
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 20),
 
 
                           // #login SNS
                           const Text("Login with",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
 
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 20),
 
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -222,7 +225,7 @@ class login extends StatelessWidget {
                             ],
                           ),//Icons
 
-                          const SizedBox(height: 40),
+                          const SizedBox(height: 30),
 
                           ClipRRect(
                             child: Stack(
@@ -262,7 +265,7 @@ class login extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context){
-                                          return splashscreen();
+                                          return SignUp();
                                         },
                                       ),
                                     );
