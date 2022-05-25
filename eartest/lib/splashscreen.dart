@@ -5,7 +5,7 @@ import 'package:eartest/screen_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+
 
 class splashscreen extends StatelessWidget {
   Widget build(BuildContext context) {

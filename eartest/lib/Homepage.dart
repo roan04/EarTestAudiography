@@ -1,7 +1,9 @@
+import 'package:eartest/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+
 
 
 class homepage extends StatelessWidget {
@@ -89,6 +91,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         backgroundImage: AssetImage("assets/images/profile.jpg"),
                         radius: 30,
                         backgroundColor: Colors.white,
+                        child: TextButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context){
+                                  return Userprofile();
+                                },
+                              ),
+                            );
+                          },
+                          child: Text(
+                              '',
+                          ),
+
+                          style: TextButton.styleFrom(
+                            primary: Colors.white ,
+
+
+
+                          ),
+                        ),
                       ),
 
                     ],
