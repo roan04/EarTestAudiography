@@ -1,5 +1,7 @@
+import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/splashscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/loginpro.dart';
+import 'package:eartest/loginpro.dart';
 
 class Userprofile extends StatelessWidget {
   const Userprofile({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class Userprofile extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 50.0),
+          padding: EdgeInsets.only(top: 60.0),
           child: Stack(
             children: <Widget>[
               Container(
@@ -22,7 +24,7 @@ class Userprofile extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 54, 231, 113),
+                    color: Color(0xffE0ECDE),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40))),
@@ -89,36 +91,200 @@ class Userprofile extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          ElevatedButton(
-                            onPressed: (){_navigateTologpro(context);},
-                            child: Text("Update"),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.redAccent,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 15.0, vertical: 10.0),
-                                textStyle: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold)),
+
+                          ClipRRect(
+                            child: Stack(
+                              children: <Widget>[
+                                Positioned.fill(
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: RadialGradient(
+                                          center: Alignment(-0.884, -1.0),
+                                          radius: 1.35,
+                                          colors: [const Color(0xff7be495), const Color(0xff329d9c)],
+                                          stops: [0.0, 1.0],
+                                          transform: GradientXDTransform(
+                                              1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
+                                        ),
+                                        borderRadius: BorderRadius.circular(21.0),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: const Color(0x36329d9c),
+                                            offset: Offset(15, 15),
+                                            blurRadius: 40,
+                                          ),
+                                        ],
+                                      )
+                                  ),
+                                ),
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    fixedSize: Size(290.0 , 65.0) ,
+                                    padding: const EdgeInsets.all(20.0),
+                                    primary: Colors.white,
+                                    textStyle: const TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () {
+
+
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context){
+                                          return Userprofile();
+                                        },
+                                      ),
+                                    );
+
+                                  },
+                                  child: const Text(
+                                    'Update personal details',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat-Bold',
+                                      fontSize: 15,
+                                      color: const Color(0xffffffff),
+                                      height: 1.3846153846153846,
+                                    ),
+                                    textHeightBehavior:
+                                    TextHeightBehavior(applyHeightToFirstAscent: false),
+                                    textAlign: TextAlign.center,),
+                                ),
+                              ],
+                            ),
                           ),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("View Reports ->"),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.amber,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 15.0, vertical: 10.0),
-                                textStyle: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold)),
+
+                          SizedBox(
+                            height: 10,
                           ),
-                          ElevatedButton(
-                            onPressed: (){},
-                            child: Text("Login Details"),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.amber,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 15.0, vertical: 10.0),
-                                textStyle: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold)),
-                          )
+
+
+                          ClipRRect(
+                            child: Stack(
+                              children: <Widget>[
+                                Positioned.fill(
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: RadialGradient(
+                                          center: Alignment(-0.884, -1.0),
+                                          radius: 1.35,
+                                          colors: [const Color(0xffe47b7b), const Color(
+                                              0xff9d3232)],
+                                          stops: [0.0, 1.0],
+                                          transform: GradientXDTransform(
+                                              1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
+                                        ),
+                                        borderRadius: BorderRadius.circular(21.0),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: const Color(0x36329d9c),
+                                            offset: Offset(15, 15),
+                                            blurRadius: 40,
+                                          ),
+                                        ],
+                                      )
+                                  ),
+                                ),
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    fixedSize: Size(290.0 , 65.0) ,
+                                    padding: const EdgeInsets.all(20.0),
+                                    primary: Colors.white,
+                                    textStyle: const TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () {
+
+
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context){
+                                          return loginprofile();
+                                        },
+                                      ),
+                                    );
+
+                                  },
+                                  child: const Text(
+                                    'Change Password',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat-Bold',
+                                      fontSize: 15,
+                                      color: const Color(0xffffffff),
+                                      height: 1.3846153846153846,
+                                    ),
+                                    textHeightBehavior:
+                                    TextHeightBehavior(applyHeightToFirstAscent: false),
+                                    textAlign: TextAlign.center,),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          SizedBox(
+                            height: 10,
+                          ),
+
+                          ClipRRect(
+                            child: Stack(
+                              children: <Widget>[
+                                Positioned.fill(
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: RadialGradient(
+                                          center: Alignment(-0.884, -1.0),
+                                          radius: 1.35,
+                                          colors: [const Color(0xff857be4), const Color(
+                                              0xff817d9b)],
+                                          stops: [0.0, 1.0],
+                                          transform: GradientXDTransform(
+                                              1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
+                                        ),
+                                        borderRadius: BorderRadius.circular(21.0),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: const Color(0x36329d9c),
+                                            offset: Offset(15, 15),
+                                            blurRadius: 40,
+                                          ),
+                                        ],
+                                      )
+                                  ),
+                                ),
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    fixedSize: Size(290.0 , 65.0) ,
+                                    padding: const EdgeInsets.all(20.0),
+                                    primary: Colors.white,
+                                    textStyle: const TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () {
+
+
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context){
+                                          return splashscreen();
+                                        },
+                                      ),
+                                    );
+
+                                  },
+                                  child: const Text(
+                                    'Show Reports',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat-Bold',
+                                      fontSize: 15,
+                                      color: const Color(0xffffffff),
+                                      height: 1.3846153846153846,
+                                    ),
+                                    textHeightBehavior:
+                                    TextHeightBehavior(applyHeightToFirstAscent: false),
+                                    textAlign: TextAlign.center,),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     )
@@ -131,7 +297,7 @@ class Userprofile extends StatelessWidget {
                   children: <Widget>[
                     ClipOval(
                         child: Image.asset(
-                      'images/profile.jpg',
+                      'assets/images/profile.jpg',
                       width: 150,
                       height: 150,
                       fit: BoxFit.cover,
@@ -149,10 +315,7 @@ class Userprofile extends StatelessWidget {
                             size: 25.0,
                           )),
                     ),
-                    Container(
-                      child: Text("Profile Page"),
-                      padding: EdgeInsets.only(left: 50, right: 20, bottom: 70),
-                    ),
+
                   ],
                 ),
               ),

@@ -7,19 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+
 class screen2 extends StatelessWidget {
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: SafeArea(
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             // set all container in the center
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly, //How container are separately
             children: <Widget>[
               Container(
-                margin: EdgeInsets.symmetric(vertical: 19.0, horizontal: 180.0),
+                margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 180.0),
                 child: Image(image: AssetImage('assets/images/ear_logo.jpg')),
               ),
 

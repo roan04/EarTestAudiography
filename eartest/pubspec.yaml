@@ -36,12 +36,20 @@ dependencies:
 
   sign_button: ^2.0.2
 
+  animated_text_kit: ^4.2.1
+
+
+
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   audioplayers: ^0.20.1
+  flutter_profile_picture: ^2.0.0
+  flutter_image_slideshow: ^0.1.2
 
 
 
@@ -80,8 +88,16 @@ flutter:
      - assets/images/Mobile login-cuate.png
      - assets/images/Mobile login-rafiki.png
      - assets/images/Mobile login-pana.png
-     - assets/images/GDPR-cuate.png
-     - images/profile.jpg
+     - assets/images/Enter OTP-bro.png
+     - assets/images/Onboarding-rafiki.png
+     - assets/images/adv1.png
+     - assets/images/adv2.png
+     - assets/images/adv3.png
+     - assets/images/profile.jpg
+     - assets/images/Retroviruses-bro.png
+     - assets/images/Stem-cell research-bro.png
+     - assets/images/World health day-bro.png
+
 
   #   - images/a_dot_ham.jpeg
 
