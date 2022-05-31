@@ -1,3 +1,4 @@
+import 'package:eartest/TestWelcomeScreen.dart';
 import 'package:eartest/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -305,7 +306,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             context,
                             MaterialPageRoute(
                               builder: (context){
-                                return homepage();
+                                return TestWelcomeScreen();
                               },
                             ),
                           );
