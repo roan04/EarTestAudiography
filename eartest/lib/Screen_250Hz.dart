@@ -5,9 +5,10 @@ import 'package:eartest/screen_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_audio_waveforms/flutter_audio_waveforms.dart';
 
 
-class splashscreen extends StatelessWidget {
+class screen250 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -29,7 +30,7 @@ class splashscreen extends StatelessWidget {
               Container(
                 width: 150,
                 child:Text(
-                    'Ear Care',
+                    '250Hz',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:27,
@@ -60,7 +61,13 @@ class splashscreen extends StatelessWidget {
               ),
 
               Container(
-                child: Image(image: AssetImage('assets/images/splashlogo.jpg')),
+                child: RectangleWaveform(
+                  maxDuration: ,
+                  elapsedDuration : elapsedDuration,
+                  height: 100,
+                  width: MediaQuery.of(context).size,width,
+
+                ),
               ),
 
               const SizedBox(height: 60),
