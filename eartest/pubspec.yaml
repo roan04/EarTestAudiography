@@ -38,6 +38,8 @@ dependencies:
 
   animated_text_kit: ^4.2.1
 
+  flutter_tts: ^3.4.0
+
 
 
 
@@ -97,6 +99,8 @@ flutter:
      - assets/images/Retroviruses-bro.png
      - assets/images/Stem-cell research-bro.png
      - assets/images/World health day-bro.png
+     - assets/images/GDPR-cuate.png
+     - assets/welcome.mp3
 
 
   #   - images/a_dot_ham.jpeg
