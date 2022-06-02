@@ -28,10 +28,6 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final FlutterTts flutterTts = FlutterTts();
 
-  void _hello(){
-    
-  }
-
   void _speak() async {
     await flutterTts.setLanguage("en-GB");
     await flutterTts.setPitch(1.5);
