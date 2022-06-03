@@ -6,7 +6,7 @@ import './i_phone8_plus_tab_bar.dart';
 
 class ScreenHomeSummary extends StatelessWidget {
   ScreenHomeSummary({
-    Key key,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

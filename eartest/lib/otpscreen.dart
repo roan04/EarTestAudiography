@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'Homepage.dart';
 
 class Otp extends StatefulWidget {
-   Otp() : super();
+   const Otp() : super();
 
   @override
   _OtpState createState() => _OtpState();
@@ -191,7 +191,7 @@ class _OtpState extends State<Otp> {
     );
   }
 
-  Widget _textFieldOTP({bool first, last}) {
+  Widget _textFieldOTP({bool? first, last}) {
     return Container(
       height: 65,
       child: AspectRatio(

@@ -4,7 +4,7 @@ import './elements_enter_verification.dart';
 
 class ScreenVerification extends StatelessWidget {
   ScreenVerification({
-    Key key,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

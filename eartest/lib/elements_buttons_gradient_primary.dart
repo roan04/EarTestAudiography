@@ -4,7 +4,7 @@ import 'package:adobe_xd/pinned.dart';
 
 class ElementsButtonsGradientPrimary extends StatelessWidget {
   ElementsButtonsGradientPrimary({
-    Key key,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
