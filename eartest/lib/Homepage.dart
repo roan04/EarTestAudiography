@@ -13,18 +13,14 @@ import 'package:alan_voice/alan_voice.dart';
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyStatefulWidget(),
-      initialRoute: '/',
-        routes: {
-          '/userprofile': (context) => const Userprofile(),
-          '/logindet': (context) => const loginprofile(),
-        }
-    );
+    return MaterialApp(home: MyStatefulWidget(), 
+    initialRoute: '/', routes: {
+      '/userprofile': (context) => const Userprofile(),
+      '/logindet': (context) => const loginprofile(),
+    }
+  );
   }
 }
 
@@ -36,8 +32,6 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-
-
   final FlutterTts flutterTts = FlutterTts();
 
   void _speak() async {
@@ -57,8 +51,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   _handleCommand(Map<String, dynamic> command) {
     switch (command["command"]) {
-      case "uprofile":
-        Navigator.pushNamed(context, '/userprofile');
+      case "profile":
+        Navigator.pushNamed(context,'/userprofile');
         break;
       case "home":
         Navigator.pushNamed(context, '/');
@@ -80,11 +74,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     AlanVoice.onCommand.add((command) => _handleCommand(command.data));
   }
 
-
-
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
@@ -131,13 +123,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(top: 50, left: 15,right: 15),
+              padding: EdgeInsets.only(top: 50, left: 15, right: 15),
               decoration: new BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 color: Color(0xffE0ECDE),
               ),
               height: 350,
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -146,64 +137,55 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        onPressed: (){},
+                        onPressed: () {},
                         icon: Icon(
                           Icons.list,
                           size: 35,
-                          color: Color(0xff214F72) ,
+                          color: Color(0xff214F72),
                         ),
                       ),
-
                       CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/profile.jpg"),
+                        backgroundImage:
+                            AssetImage("assets/images/profile.jpg"),
                         radius: 30,
                         backgroundColor: Colors.white,
                         child: TextButton(
-                          onPressed: (){
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context){
+                                builder: (context) {
                                   return Userprofile();
                                 },
                               ),
                             );
                           },
                           child: Text(
-                              '',
+                            '',
                           ),
-
                           style: TextButton.styleFrom(
-                            primary: Colors.white ,
-
-
-
+                            primary: Colors.white,
                           ),
                         ),
                       ),
-
                     ],
                   ),
-
                   SizedBox(
                     height: 10,
                   ),
-
                   Text(
-                      "Good Evening Rohan",
+                    "Good Evening Rohan",
                     textAlign: TextAlign.right,
                     style: TextStyle(
                       fontSize: 27,
                       fontFamily: 'Roboto-Black',
-                      fontWeight:FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(39, 82, 112, 1),
                     ),
                   ),
-
                   SizedBox(
                     height: 30,
                   ),
-
                   Text(
                     "Complete your daily activity. Your target today is to avoid loud music,",
                     style: TextStyle(
@@ -211,87 +193,73 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       fontFamily: 'Roboto-Black',
                       color: const Color(0xff507e72),
                     ),
-
                   ),
-
-                SizedBox(
-                  height: 30,
-                ),
-
+                  SizedBox(
+                    height: 30,
+                  ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       TextButton(
-                          onPressed: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context){
-                                  return homepage();
-                                },
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'More details'
-                          ),
-                        style: TextButton.styleFrom(
-                          primary: Colors.white ,
-                          backgroundColor: Color(0xff214F72),
-                          shape:  BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
-                        ),
-
-                      ),
-
-                      TextButton(
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context){
+                              builder: (context) {
                                 return homepage();
                               },
                             ),
                           );
                         },
-                        child: Text(
-                            'Remind me later'
-                        ),
-
+                        child: Text('More details'),
                         style: TextButton.styleFrom(
-                          primary: Colors.white ,
+                          primary: Colors.white,
+                          backgroundColor: Color(0xff214F72),
+                          shape: BeveledRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(7))),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return homepage();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text('Remind me later'),
+                        style: TextButton.styleFrom(
+                          primary: Colors.white,
                           backgroundColor: Color(0xff339D9C),
-                          shape:  BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
+                          shape: BeveledRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(7))),
                         ),
                       ),
                     ],
-
                   ),
-
-
                 ],
-
               ),
             ),
-
             Container(
-              padding: EdgeInsets.only(top: 20, left: 15,right: 15),
+              padding: EdgeInsets.only(top: 20, left: 15, right: 15),
               decoration: new BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 color: Colors.white,
               ),
               height: 450,
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("What are you doing today?",
-                    style: TextStyle(
-                      color: Color(0xff214F72)
-                    ) ,
+                  Text(
+                    "What are you doing today?",
+                    style: TextStyle(color: Color(0xff214F72)),
                   ),
-
                   SizedBox(
                     height: 40,
                   ),
@@ -304,17 +272,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         color: Color(0xff214F72),
                         size: 50,
                       ),
-
                       Text(
                         "Listen to soothing sound",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                            color: Color(0xff214F72),
+                          color: Color(0xff214F72),
                         ),
                       ),
-
                       TextButton(
-                        onPressed: (){
+                        onPressed: () {
                           _testsound();
                           /* Navigator.push(
                             context,
@@ -325,14 +291,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             ),
                           ); */
                         },
-                        child: Text(
-                            'View'
-                        ),
-
+                        child: Text('View'),
                         style: TextButton.styleFrom(
-                          primary: Colors.white ,
+                          primary: Colors.white,
                           backgroundColor: Colors.red,
-                          shape:  BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
+                          shape: BeveledRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(7))),
                         ),
                       ),
                     ],
@@ -340,15 +305,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   SizedBox(
                     height: 10,
                   ),
-
                   Divider(
                     color: Color(0xff5f7c52),
                   ),
-
                   SizedBox(
                     height: 10,
                   ),
-
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -358,7 +320,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         color: Color(0xff214F72),
                         size: 50,
                       ),
-
                       Text(
                         "Perform weekly ear test",
                         style: TextStyle(
@@ -366,49 +327,43 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           color: Color(0xff214F72),
                         ),
                       ),
-
                       TextButton(
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context){
+                              builder: (context) {
                                 return TestWelcomeScreen();
                               },
                             ),
                           );
                         },
-                        child: Text(
-                            'View'
-                        ),
-
+                        child: Text('View'),
                         style: TextButton.styleFrom(
-                          primary: Colors.white ,
+                          primary: Colors.white,
                           backgroundColor: Color(0xff339D9C),
-                          shape:  BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
+                          shape: BeveledRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(7))),
                         ),
                       ),
                     ],
                   ),
-
                   SizedBox(
                     height: 10,
                   ),
-
                   Divider(
                     color: Color(0xff5f7c52),
                   ),
-
                   SizedBox(
                     height: 20,
                   ),
-
                   ImageSlideshow(
                     width: 500,
                     height: 170,
                     initialPage: 0,
                     indicatorColor: Colors.white,
-                    indicatorBackgroundColor: Colors.white ,
+                    indicatorBackgroundColor: Colors.white,
                     onPageChanged: (value) {
                       debugPrint('Page changed: $value');
                     },
@@ -429,33 +384,33 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
           ],
         ),
-
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,
-            color: Color(0xff214F72),
+            icon: Icon(
+              Icons.home,
+              color: Color(0xff214F72),
             ),
             label: 'Home',
             backgroundColor: Colors.white,
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.search,
+            icon: Icon(
+              Icons.search,
               color: Color(0xff214F72),
             ),
             label: 'Search',
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.play_arrow,
+            icon: Icon(
+              Icons.play_arrow,
               color: Color(0xff339D9C),
               size: 60,
             ),
@@ -463,15 +418,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.hearing,
+            icon: Icon(
+              Icons.hearing,
               color: Color(0xff214F72),
             ),
             label: 'My Hearing',
             backgroundColor: Colors.white,
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_rounded,
+            icon: Icon(
+              Icons.person_rounded,
               color: Color(0xff214F72),
             ),
             label: 'Profile',
