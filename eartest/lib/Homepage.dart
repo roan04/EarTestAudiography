@@ -60,6 +60,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       case "logindetails":
         Navigator.pushNamed(context, '/logindet');
         break;
+      case "goback":
+        Navigator.pop(context);
+        break;
       default:
         debugPrint("Unknown command");
     }
