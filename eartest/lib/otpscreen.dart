@@ -1,5 +1,5 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
-import 'package:eartest/splashscreen.dart';
+import 'package:eartest/firstScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'Homepage.dart';
