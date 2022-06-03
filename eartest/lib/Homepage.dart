@@ -4,8 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:eartest/loginpro.dart';
 
-
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:alan_voice/alan_voice.dart';
 
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
@@ -14,9 +17,13 @@ class homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-
+    return MaterialApp(
       home: MyStatefulWidget(),
+      initialRoute: '/',
+        routes: {
+          '/userprofile': (context) => const Userprofile(),
+          '/logindet': (context) => const loginprofile(),
+        }
     );
   }
 }
@@ -29,6 +36,52 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+
+
+  final FlutterTts flutterTts = FlutterTts();
+
+  void _speak() async {
+    await flutterTts.setLanguage("en-GB");
+    await flutterTts.setPitch(1.5);
+    //flutterTts.setSilence(2000);
+    await flutterTts.speak(
+        "The instructions are as follows : 1.Plug in your headset, 2.Test the sound");
+  }
+
+  Future<AudioPlayer> _testsound() async {
+    AudioCache cache = new AudioCache();
+    //At the next line, DO NOT pass the entire reference such as assets/yes.mp3. This will not work.
+    //Just pass the file name only.
+    return await cache.play("welcome.mp3"); //Rohan modify this if possible
+  }
+
+  _handleCommand(Map<String, dynamic> command) {
+    switch (command["command"]) {
+      case "profile":
+        Navigator.pushNamed(context, '/userprofile');
+        break;
+      case "home":
+        Navigator.pushNamed(context, '/');
+        break;
+      case "logindetails":
+        Navigator.pushNamed(context, '/logindet');
+        break;
+      default:
+        debugPrint("Unknown command");
+    }
+  }
+
+  _MyStatefulWidgetState() {
+    AlanVoice.addButton(
+        "3998c7dcc2eb062dcd451a54a75d4a832e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
+
+    /// Update the onCommand handler
+    AlanVoice.onCommand.add((command) => _handleCommand(command.data));
+  }
+
+
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -54,6 +107,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (index == 2) {
+        _speak();
+      }
+      if (index == 4) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return Userprofile();
+            },
+          ),
+        );
+      }
     });
   }
 
@@ -249,14 +315,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
                       TextButton(
                         onPressed: (){
-                          Navigator.push(
+                          _testsound();
+                          /* Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context){
                                 return homepage();
                               },
                             ),
-                          );
+                          ); */
                         },
                         child: Text(
                             'View'
