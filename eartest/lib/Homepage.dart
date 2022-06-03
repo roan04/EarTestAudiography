@@ -57,7 +57,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   _handleCommand(Map<String, dynamic> command) {
     switch (command["command"]) {
-      case "profile":
+      case "uprofile":
         Navigator.pushNamed(context, '/userprofile');
         break;
       case "home":
