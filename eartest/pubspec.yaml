@@ -40,6 +40,8 @@ dependencies:
 
   flutter_tts: ^3.4.0
 
+  alan_voice: ^3.6.0
+
 
 
 

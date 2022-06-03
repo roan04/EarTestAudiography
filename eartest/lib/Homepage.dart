@@ -6,6 +6,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:alan_voice/alan_voice.dart';
 
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
@@ -41,6 +42,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     //At the next line, DO NOT pass the entire reference such as assets/yes.mp3. This will not work.
     //Just pass the file name only.
     return await cache.play("welcome.mp3"); //Rohan modify this if possible
+  }
+
+  _handleCommand(Map<String, dynamic> command) {
+    switch (command["command"]) {
+      case "home":
+        Navigator.pushNamed(context, '/second');
+        break;
+      case "profile":
+        Navigator.pop(context);
+        break;
+      default:
+        debugPrint("Unknown command");
+    }
+  }
+
+  _MyStatefulWidgetState() {
+    AlanVoice.addButton(
+        "3998c7dcc2eb062dcd451a54a75d4a832e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
+
+    /// Update the onCommand handler
+    AlanVoice.onCommand.add((command) => _handleCommand(command.data));
   }
 
   int _selectedIndex = 0;
