@@ -90,6 +90,7 @@ class splashscreen extends StatelessWidget {
                           )
                       ),
                     ),
+
                     TextButton(
                       style: TextButton.styleFrom(
                         fixedSize: Size(290.0 , 65.0) ,

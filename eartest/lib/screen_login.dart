@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ScreenLogin extends StatelessWidget {
   ScreenLogin({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

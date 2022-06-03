@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class IPhone8PlusTabBar extends StatelessWidget {
   IPhone8PlusTabBar({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

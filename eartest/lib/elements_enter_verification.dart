@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ElementsEnterVerification extends StatelessWidget {
   ElementsEnterVerification({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

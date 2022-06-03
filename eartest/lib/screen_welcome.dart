@@ -5,7 +5,7 @@ import './elements_pagination_dots.dart';
 
 class ScreenWelcome extends StatelessWidget {
   ScreenWelcome({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

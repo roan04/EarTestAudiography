@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class notifOTP extends StatelessWidget {
   notifOTP({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:adobe_xd/pinned.dart';
 
 class AtomsAvatarsNameMedium extends StatelessWidget {
   AtomsAvatarsNameMedium({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

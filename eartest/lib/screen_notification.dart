@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ScreenNotification extends StatelessWidget {
   ScreenNotification({
-    Key? key,
+    Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

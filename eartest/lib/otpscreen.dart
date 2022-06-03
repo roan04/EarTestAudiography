@@ -191,7 +191,7 @@ class _OtpState extends State<Otp> {
     );
   }
 
-  Widget _textFieldOTP({bool? first, last}) {
+  Widget _textFieldOTP({bool first, last}) {
     return Container(
       height: 65,
       child: AspectRatio(

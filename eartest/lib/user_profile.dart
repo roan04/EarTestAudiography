@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:eartest/loginpro.dart';
 
 class Userprofile extends StatelessWidget {
-  const Userprofile({Key? key}) : super(key: key);
+  const Userprofile({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
