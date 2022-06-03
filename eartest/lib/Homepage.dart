@@ -13,8 +13,12 @@ class homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: MyStatefulWidget(),
+      initialRoute: '/',
+        routes: {
+          '/userprofile': (context) => const Userprofile(),
+        }
     );
   }
 }
@@ -46,11 +50,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   _handleCommand(Map<String, dynamic> command) {
     switch (command["command"]) {
-      case "home":
-        Navigator.pushNamed(context, '/second');
-        break;
       case "profile":
-        Navigator.pop(context);
+        Navigator.pushNamed(context, '/userprofile');
+        break;
+      case "home":
+        Navigator.pushNamed(context, '/');
         break;
       default:
         debugPrint("Unknown command");
