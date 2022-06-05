@@ -1,20 +1,26 @@
+import 'package:eartest/TestWelcomeScreen.dart';
 import 'package:eartest/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:eartest/loginpro.dart';
 
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:alan_voice/alan_voice.dart';
 
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyStatefulWidget(),
-    );
+    return MaterialApp(home: MyStatefulWidget(), 
+    initialRoute: '/', routes: {
+      '/userprofile': (context) => const Userprofile(),
+      '/logindet': (context) => const loginprofile(),
+    }
+  );
   }
 }
 
@@ -41,6 +47,38 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     //At the next line, DO NOT pass the entire reference such as assets/yes.mp3. This will not work.
     //Just pass the file name only.
     return await cache.play("welcome.mp3"); //Rohan modify this if possible
+  }
+
+  _handleCommand(Map<String, dynamic> command) {
+    switch (command["command"]) {
+      case "profile":
+        Navigator.pushNamed(context,'/userprofile');
+        break;
+      case "home":
+        Navigator.pushNamed(context, '/');
+        break;
+      case "logindetails":
+        Navigator.pushNamed(context, '/logindet');
+        break;
+      case "goback":
+        Navigator.pop(context);
+        break;
+      default:
+        debugPrint("Unknown command");
+    }
+  }
+
+  _MyStatefulWidgetState() {
+    AlanVoice.addButton(
+        "3998c7dcc2eb062dcd451a54a75d4a832e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
+
+    /*AlanVoice.addButton(
+        "5f0043594ed63dd3717b88552dafd9e52e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);*/
+
+    /// Update the onCommand handler
+    AlanVoice.onCommand.add((command) => _handleCommand(command.data));
   }
 
   int _selectedIndex = 0;
@@ -302,7 +340,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return homepage();
+                                return TestWelcomeScreen();
                               },
                             ),
                           );

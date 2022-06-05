@@ -1,5 +1,5 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
-import 'package:eartest/splashscreen.dart';
+import 'package:eartest/firstScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:eartest/loginpro.dart';
 
@@ -264,7 +264,7 @@ class Userprofile extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context){
-                                          return splashscreen();
+                                          return firstScreen();
                                         },
                                       ),
                                     );

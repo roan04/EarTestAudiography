@@ -1,9 +1,9 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:eartest/splashscreen.dart';
+import 'package:eartest/firstScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './icons_arrows_previuos.dart';
+import './icons_arrows_previous.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ScreenNotification extends StatelessWidget {
@@ -335,7 +335,7 @@ class ScreenNotification extends StatelessWidget {
             Pin(size: 12.0, start: 62.0),
             child:
                 // Adobe XD layer: 'Icons/ Arrows/ Prev…' (component)
-                splashscreen(),
+                firstScreen(),
           ),
         ],
       ),

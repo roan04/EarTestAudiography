@@ -1,8 +1,9 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/Homepage.dart';
 import 'package:eartest/SignUp.dart';
 import 'package:eartest/screen2.dart';
 import 'package:eartest/screen_notification.dart';
-import 'package:eartest/splashscreen.dart';
+import 'package:eartest/firstScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -145,7 +146,8 @@ class login extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context){
-                                          return splashscreen();
+                                          //return firstScreen();
+                                          return homepage();
                                         },
                                       ),
                                     );

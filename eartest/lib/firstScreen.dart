@@ -172,5 +172,3 @@ class splashscreen extends StatelessWidget {
     );
   }
 }
-
-
