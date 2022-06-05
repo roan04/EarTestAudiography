@@ -73,6 +73,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         "3998c7dcc2eb062dcd451a54a75d4a832e956eca572e1d8b807a3e2338fdd0dc/stage",
         buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
 
+    /*AlanVoice.addButton(
+        "5f0043594ed63dd3717b88552dafd9e52e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);*/
+
     /// Update the onCommand handler
     AlanVoice.onCommand.add((command) => _handleCommand(command.data));
   }
