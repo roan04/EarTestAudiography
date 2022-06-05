@@ -1,4 +1,5 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
+import 'package:eartest/Homepage.dart';
 import 'package:eartest/SignUp.dart';
 import 'package:eartest/screen2.dart';
 import 'package:eartest/screen_notification.dart';
@@ -145,7 +146,8 @@ class login extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context){
-                                          return firstScreen();
+                                          //return firstScreen();
+                                          return homepage();
                                         },
                                       ),
                                     );
