@@ -40,7 +40,7 @@ class SplashScreen extends StatelessWidget {
           ],
         ),
 
-      nextScreen: firstScreen(),
+      nextScreen: SplashScreen(),
       splashIconSize: 200,
       duration: 4000,
       splashTransition: SplashTransition.fadeTransition,

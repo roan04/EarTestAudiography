@@ -1,3 +1,4 @@
+import 'package:eartest/TestScreen_250Hz.dart';
 import 'package:eartest/TestWelcomeScreen.dart';
 import 'package:eartest/user_profile.dart';
 import 'package:flutter/cupertino.dart';
@@ -115,6 +116,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           MaterialPageRoute(
             builder: (context) {
               return Userprofile();
+            },
+          ),
+        );
+      }
+
+      if (index == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return testscreen250();
             },
           ),
         );

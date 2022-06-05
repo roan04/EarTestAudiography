@@ -1,16 +1,76 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
-import 'package:eartest/login.dart';
-import 'package:eartest/screen2.dart';
-import 'package:eartest/screen_notification.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:eartest/TestScreen_500Hz.dart';
+import 'package:eartest/firstScreen.dart';
+import 'package:eartest/screen2.dart';
+import 'package:eartest/splashscreen.dart';
+import 'package:flutter/material.dart';
+import 'package:tilt_action/tilt_action.dart';
+
+import 'login.dart';
 
 
-class firstScreen extends StatelessWidget {
+
+class testscreen250 extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      title: 'Splash Tap Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: TiltActionDemo(),
+    );
+  }
+}
+
+class TiltActionDemo extends StatefulWidget {
+  @override
+  _TiltActionDemoState createState() => _TiltActionDemoState();
+}
+
+class _TiltActionDemoState extends State<TiltActionDemo> {
+  String text =
+      "Test on a physical device. Sensors don't work accurately on emulators/simulators";
+  Tilt tilt = Tilt.waitForStart();
+
+  @override
+  void initState() {
+    super.initState();
+
+    tilt = Tilt(onTiltUp: () {
+      setState(() {
+
+      });
+    }, onTiltDown: () {
+      setState(() {
+        text = "Down";
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context){
+              return testscreen500();
+            },
+          ),
+        );
+
+      });
+    }, onNormal: () {
+      setState(() {
+
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tilt.stopListening();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
@@ -29,7 +89,7 @@ class firstScreen extends StatelessWidget {
               Container(
                 width: 150,
                 child:Text(
-                    'Ear Care',
+                    '250Hz',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:27,
@@ -59,9 +119,7 @@ class firstScreen extends StatelessWidget {
                 height: 35.0,
               ),
 
-              Container(
-                child: Image(image: AssetImage('assets/images/splashlogo.jpg')),
-              ),
+              //TODO:Add wavefront
 
               const SizedBox(height: 60),
 
@@ -167,8 +225,7 @@ class firstScreen extends StatelessWidget {
               )
             ],
           ),
-        ),
-      ),
+        )
     );
   }
 }
