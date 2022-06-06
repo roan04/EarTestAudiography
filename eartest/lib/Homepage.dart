@@ -8,6 +8,8 @@ import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:eartest/loginpro.dart';
 
+
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:alan_voice/alan_voice.dart';
 
@@ -20,6 +22,7 @@ class homepage extends StatelessWidget {
     initialRoute: '/', routes: {
       '/userprofile': (context) => const Userprofile(),
       '/logindet': (context) => const loginprofile(),
+      '/testscr250': (context) => testscreen250()
     }
   );
   }
@@ -33,6 +36,15 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+
+  final FlutterTts flutterTts = FlutterTts();
+
+  void _speak() async {
+    await flutterTts.setLanguage("en-GB");
+    await flutterTts.setPitch(1.5);
+    flutterTts.setSilence(2000);
+    await flutterTts.speak("Hello!, Are you ready for the test ?");  
+  }
 
   Future<AudioPlayer> _testsound() async {
     AudioCache cache = new AudioCache();
@@ -54,6 +66,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         break;
       case "goback":
         Navigator.pop(context);
+        break;
+      case "yiamready":
+        Navigator.pushNamed(context, '/testscr250');
+        break;
+      case "starttest":
+        Navigator.pushNamed(context, '/testscr250');
         break;
       default:
         debugPrint("Unknown command");
@@ -99,6 +117,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     setState(() {
       _selectedIndex = index;
       if (index == 2) {
+        _speak();
         Navigator.push(
           context,
           MaterialPageRoute(
