@@ -22,7 +22,7 @@ class homepage extends StatelessWidget {
     initialRoute: '/', routes: {
       '/userprofile': (context) => const Userprofile(),
       '/logindet': (context) => const loginprofile(),
-      '/testscr250': (context) => testscreen250()
+      '/testscr250': (context) => testscreen250(),
     }
   );
   }
