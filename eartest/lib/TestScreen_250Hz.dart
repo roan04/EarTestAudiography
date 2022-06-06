@@ -6,8 +6,11 @@ import 'package:eartest/screen2.dart';
 import 'package:eartest/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:tilt_action/tilt_action.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'login.dart';
+
+
 
 
 
@@ -15,7 +18,6 @@ class testscreen250 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Splash Tap Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -106,7 +108,7 @@ class _TiltActionDemoState extends State<TiltActionDemo> {
 
               Container(
                 child:Text(
-                    'Audiometry test',
+                    'Press when you hear the sound',
                     style: TextStyle(
                         fontSize:20,
                         color: Color.fromRGBO(104, 178, 160, 1),
@@ -115,114 +117,59 @@ class _TiltActionDemoState extends State<TiltActionDemo> {
                 ),
               ),
 
-              SizedBox(
-                height: 35.0,
-              ),
+
+
 
               //TODO:Add wavefront
 
-              const SizedBox(height: 60),
+              Container(
+                child: Image(image: AssetImage("assets/images/sleep analysis-rafiki.png")),
 
-              ClipRRect(
-                child: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Container(
-                          decoration: BoxDecoration(
-                            gradient: RadialGradient(
-                              center: Alignment(-0.884, -1.0),
-                              radius: 1.35,
-                              colors: [const Color(0xff7be495), const Color(0xff329d9c)],
-                              stops: [0.0, 1.0],
-                              transform: GradientXDTransform(
-                                  1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
-                            ),
-                            borderRadius: BorderRadius.circular(21.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x36329d9c),
-                                offset: Offset(15, 15),
-                                blurRadius: 40,
-                              ),
-                            ],
-                          )
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        fixedSize: Size(290.0 , 65.0) ,
-                        padding: const EdgeInsets.all(20.0),
-                        primary: Colors.white,
-                        textStyle: const TextStyle(fontSize: 20),
-                      ),
-                      onPressed: () {
-                        final player = AudioCache();
-                        player.play('welcome.mp3');
-
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context){
-                              return screen2();
-                            },
-                          ),
-                        );
-
-                      },
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat-Bold',
-                          fontSize: 18,
-                          color: const Color(0xffffffff),
-                          height: 1.3846153846153846,
-                        ),
-                        textHeightBehavior:
-                        TextHeightBehavior(applyHeightToFirstAscent: false),
-                        textAlign: TextAlign.center,),
-                    ),
-                  ],
-                ),
-              ), //Get Started button
-
-              SizedBox(
-                height: 30.0,
               ),
 
-              Container(
-                child:Text(
-                    'Already have an account ? ',
-                    style: TextStyle(
-                        fontSize:15,
-                        color: Color.fromRGBO(104, 178, 160, 1),
-                        fontFamily: 'Roboto-Black'
-                    )
-                ),
-              ),
 
-              Container(
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context){
-                          return login();
-                        },
-                      ),
-                    );
-                    print("Sign in clicked");
-                  },
-                  child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                          fontSize:16,
-                          color: Color.fromRGBO(39, 82, 112, 1),
-                          fontFamily: 'Roboto-Black'
-                      )
+
+                Container(
+                  alignment: Alignment.center,
+                  width: 600.0,
+                  height: 20,
+                  child: DefaultTextStyle(
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        FlickerAnimatedText('Relax !',
+                            speed: Duration(milliseconds: 1000),entryEnd: 0.7),
+                        FlickerAnimatedText('Listen !',
+                            speed: Duration(milliseconds: 1000),entryEnd: 0.7),
+
+                      ],
+                    ),
+                    ),
+                ),
+
+              const SizedBox(height: 30),
+
+              SizedBox( //<-- SEE HERE
+                width: 100,
+                height: 100,
+                child: FittedBox( //<-- SEE HERE
+                  child: FloatingActionButton( //<-- SEE HERE
+                    backgroundColor:Color(0xff7be495) ,
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.hearing,
+                      size: 25,
+                      color:  Color.fromRGBO(39, 82, 112, 1),
+                    ),
                   ),
                 ),
-              )
+              ),
+
             ],
           ),
         )
