@@ -42,7 +42,7 @@ class _TiltActionDemoState extends State<TiltActionDemo> {
           context,
           MaterialPageRoute(
             builder: (context){
-              return splashscreen();
+              return SplashScreen();
             },
           ),
         );

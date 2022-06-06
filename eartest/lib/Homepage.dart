@@ -1,5 +1,6 @@
 import 'package:eartest/TestScreen_250Hz.dart';
 import 'package:eartest/TestWelcomeScreen.dart';
+import 'package:eartest/TestWelcomeInstruction.dart';
 import 'package:eartest/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:eartest/loginpro.dart';
 
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:alan_voice/alan_voice.dart';
 
@@ -33,15 +33,6 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  final FlutterTts flutterTts = FlutterTts();
-
-  void _speak() async {
-    await flutterTts.setLanguage("en-GB");
-    await flutterTts.setPitch(1.5);
-    //flutterTts.setSilence(2000);
-    await flutterTts.speak(
-        "The instructions are as follows : 1.Plug in your headset, 2.Test the sound");
-  }
 
   Future<AudioPlayer> _testsound() async {
     AudioCache cache = new AudioCache();
@@ -108,7 +99,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     setState(() {
       _selectedIndex = index;
       if (index == 2) {
-        _speak();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return TestWelcomeScreen();
+            },
+          ),
+        );
       }
       if (index == 4) {
         Navigator.push(
@@ -116,17 +114,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           MaterialPageRoute(
             builder: (context) {
               return Userprofile();
-            },
-          ),
-        );
-      }
-
-      if (index == 2) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return testscreen250();
             },
           ),
         );
