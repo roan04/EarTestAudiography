@@ -80,7 +80,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   _MyStatefulWidgetState() {
     AlanVoice.addButton(
-        "3998c7dcc2eb062dcd451a54a75d4a832e956eca572e1d8b807a3e2338fdd0dc/stage",
+        "81e22f45c2ca97db717b88552dafd9e52e956eca572e1d8b807a3e2338fdd0dc/stage",
         buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
 
     /*AlanVoice.addButton(
