@@ -10,12 +10,11 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'login.dart';
 
-import 'TestScreen_750Hz.dart';
-import 'TestScreen_250Hz.dart';
 
 
 
-class testscreen500 extends StatelessWidget {
+
+class testscreen750 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,15 +42,7 @@ class _TiltActionDemoState extends State<TiltActionDemo> {
 
     tilt = Tilt(onTiltUp: () {
       setState(() {
-        text = "Up";
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return testscreen250();
-            },
-          ),
-        );
+
       });
     }, onTiltDown: () {
       setState(() {
@@ -100,7 +91,7 @@ class _TiltActionDemoState extends State<TiltActionDemo> {
               Container(
                 width: 150,
                 child: Text(
-                    '500Hz',
+                    '750Hz',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 27,

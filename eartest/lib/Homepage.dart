@@ -1,4 +1,5 @@
 import 'package:eartest/TestScreen_250Hz.dart';
+import 'package:eartest/TestScreen_500Hz.dart';
 import 'package:eartest/TestWelcomeScreen.dart';
 import 'package:eartest/TestWelcomeInstruction.dart';
 import 'package:eartest/user_profile.dart';
@@ -13,6 +14,10 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:alan_voice/alan_voice.dart';
 
+
+import 'TestScreen_750Hz.dart';
+
+
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
 
@@ -23,6 +28,8 @@ class homepage extends StatelessWidget {
       '/userprofile': (context) => const Userprofile(),
       '/logindet': (context) => const loginprofile(),
       '/testscr250': (context) => testscreen250(),
+      '/testscr500' :(context) => testscreen500(),
+      '/testscr750' :(context) => testscreen750(),
     }
   );
   }
@@ -72,6 +79,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         break;
       case "starttest":
         Navigator.pushNamed(context, '/testscr250');
+        break;
+      case "retest":
+        Navigator.pushNamed(context, '/testscr250');
+        break;
+      case "heard250":
+        Navigator.pushNamed(context, '/testscr500');
+        break;
+      case "heard500":
+        Navigator.pushNamed(context, '/testscr750');
         break;
       default:
         debugPrint("Unknown command");
