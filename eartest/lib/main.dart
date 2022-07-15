@@ -10,7 +10,11 @@ import 'Homepage.dart';
 import 'TestScreen_250Hz.dart';
 import 'firstScreen.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

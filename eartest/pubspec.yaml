@@ -46,9 +46,13 @@ dependencies:
 
   tilt_action: ^0.1.0
 
+  cloud_firestore: ^3.3.0
 
+  firebase_auth: ^3.4.2
 
+  firebase_core: ^1.19.2
 
+  modal_progress_hud: ^0.1.3
 
 
 
