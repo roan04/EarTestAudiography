@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1067831531074",
-    "project_id": "eartestauth",
-    "storage_bucket": "eartestauth.appspot.com"
+    "project_number": "245214460089",
+    "project_id": "eartest-404",
+    "storage_bucket": "eartest-404.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1067831531074:android:6223471088ceb411cabfdb",
+        "mobilesdk_app_id": "1:245214460089:android:ca474b88be08a32efc8368",
         "android_client_info": {
           "package_name": "com.roan.eartest"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1067831531074-vmht8pdlr4sa0pdtgikgeb2beak4s9b9.apps.googleusercontent.com",
+          "client_id": "245214460089-14k9qk4feumikn4hg5omsniakjsgd3ip.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBp1BC7F7ZwK2IzatbSNEu51xGt-B-KGk4"
+          "current_key": "AIzaSyDbodOFN7k_gxsTl_C0Bd0ZzF6P1E-bf4A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1067831531074-vmht8pdlr4sa0pdtgikgeb2beak4s9b9.apps.googleusercontent.com",
+              "client_id": "245214460089-14k9qk4feumikn4hg5omsniakjsgd3ip.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
