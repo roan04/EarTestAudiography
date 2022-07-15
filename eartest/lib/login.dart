@@ -160,13 +160,16 @@ class login extends StatelessWidget {
                                     textStyle: const TextStyle(fontSize: 20),
                                   ),
                                   onPressed: () async {
-                                    log('$xemail');
-                                    log('$xpass');
+                                    /* log('$xemail');
+                                    log('$xpass'); */
                                     try {
                                       final user = await _auth
                                           .signInWithEmailAndPassword(
                                               email: xemail, password: xpass);
                                       if (user != null) {
+                                        final player = AudioCache();
+                                        player.play('welcome.mp3');
+
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(

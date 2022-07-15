@@ -10,136 +10,174 @@ import 'package:flutter/widgets.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:sign_button/sign_button.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:developer';
+
+final _auth = FirebaseAuth.instance;
 
 class SignUp extends StatelessWidget {
+  String email = "";
+  String password = "";
+  String repass = "";
+
+  bool chckpass(String p1, String p2) {
+    bool valid = false;
+    if (p1.compareTo(p2) == 0) {
+      valid = true;
+    }
+    return valid;
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 1.0)
-          ),
-
+          decoration: BoxDecoration(color: Color.fromRGBO(255, 255, 255, 1.0)),
           child: Column(
-            crossAxisAlignment:  CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.all(1),
-
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-
-                  children: const[
-                    Image(image: AssetImage('assets/images/Mobile login-pana.png'), height: 250,),
-                    Text('Sign Up',
+                  children: const [
+                    Image(
+                      image: AssetImage('assets/images/Mobile login-pana.png'),
+                      height: 250,
+                    ),
+                    Text(
+                      'Sign Up',
                       style: TextStyle(
                         fontFamily: 'Montserrat-Bold',
                         fontSize: 22,
                         color: const Color(0xff69b39b),
                         height: 1.3846153846153846,
-                      ),)
-
+                      ),
+                    )
                   ],
                 ),
               ),
-
-
-
               Expanded(
                 child: Container(
-
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.all(30),
                       child: Column(
                         children: [
-                          const SizedBox(height: 1,),
+                          const SizedBox(
+                            height: 1,
+                          ),
                           // #email, #password
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: const[
+                              boxShadow: const [
                                 BoxShadow(
-                                    color: Color.fromRGBO(
-                                        167, 222, 189, 1.0),blurRadius: 10,offset: Offset(-3,2)),
+                                    color: Color.fromRGBO(167, 222, 189, 1.0),
+                                    blurRadius: 10,
+                                    offset: Offset(-3, 2)),
                               ],
                             ),
-
 
                             child: Column(
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey.shade200,width: 2),),
+                                    border: Border(
+                                      bottom: BorderSide(
+                                          color: Colors.grey.shade200,
+                                          width: 2),
+                                    ),
                                   ),
                                   child: const TextField(
                                     decoration: InputDecoration(
                                         hintText: "First Name",
-                                        hintStyle: TextStyle(color: Colors.grey),
-                                        border: InputBorder.none
-                                    ),
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
                                   ),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey.shade200,width: 2),),
+                                    border: Border(
+                                      bottom: BorderSide(
+                                          color: Colors.grey.shade200,
+                                          width: 2),
+                                    ),
                                   ),
                                   child: const TextField(
                                     decoration: InputDecoration(
                                         hintText: "Last Name",
-                                        hintStyle: TextStyle(color: Colors.grey),
-                                        border: InputBorder.none
-                                    ),
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
                                   ),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey.shade200,width: 2)),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.grey.shade200,
+                                            width: 2)),
                                   ),
-                                  child: const TextField(
+                                  child: TextField(
+                                    onChanged: (value) {
+                                      email = value;
+                                    },
                                     decoration: InputDecoration(
                                         hintText: "Email",
-                                        hintStyle: TextStyle(color: Colors.grey),
-                                        border: InputBorder.none
-                                    ),
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
                                   ),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey.shade200,width: 2)),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.grey.shade200,
+                                            width: 2)),
                                   ),
-                                  child: const TextField(
+                                  child: TextField(
+                                    onChanged: (value) {
+                                      password = value;
+                                    },
                                     decoration: InputDecoration(
                                         hintText: "Password",
-                                        hintStyle: TextStyle(color: Colors.grey),
-                                        border: InputBorder.none
-                                    ),
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
                                   ),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey.shade200,width: 2)),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.grey.shade200,
+                                            width: 2)),
                                   ),
-                                  child: const TextField(
+                                  child: TextField(
+                                    onChanged: (value) {
+                                      repass = value;
+                                    },
                                     decoration: InputDecoration(
                                         hintText: "Re-enter password",
-                                        hintStyle: TextStyle(color: Colors.grey),
-                                        border: InputBorder.none
-                                    ),
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
                                   ),
                                 ),
                               ],
-                            ),//To input credentials
+                            ), //To input credentials
                           ),
-
 
                           const SizedBox(height: 40),
                           // #login
@@ -149,45 +187,73 @@ class SignUp extends StatelessWidget {
                                 Positioned.fill(
                                   child: Container(
                                       decoration: BoxDecoration(
-                                        gradient: RadialGradient(
-                                          center: Alignment(-0.884, -1.0),
-                                          radius: 1.35,
-                                          colors: [const Color(0xff7be495), const Color(0xff329d9c)],
-                                          stops: [0.0, 1.0],
-                                          transform: GradientXDTransform(
-                                              1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(-0.884, -1.0)),
-                                        ),
-                                        borderRadius: BorderRadius.circular(21.0),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: const Color(0x36329d9c),
-                                            offset: Offset(15, 15),
-                                            blurRadius: 40,
-                                          ),
-                                        ],
-                                      )
-                                  ),
+                                    gradient: RadialGradient(
+                                      center: Alignment(-0.884, -1.0),
+                                      radius: 1.35,
+                                      colors: [
+                                        const Color(0xff7be495),
+                                        const Color(0xff329d9c)
+                                      ],
+                                      stops: [0.0, 1.0],
+                                      transform: GradientXDTransform(
+                                          1.0,
+                                          0.0,
+                                          0.0,
+                                          1.0,
+                                          0.0,
+                                          0.0,
+                                          Alignment(-0.884, -1.0)),
+                                    ),
+                                    borderRadius: BorderRadius.circular(21.0),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color(0x36329d9c),
+                                        offset: Offset(15, 15),
+                                        blurRadius: 40,
+                                      ),
+                                    ],
+                                  )),
                                 ),
                                 TextButton(
                                   style: TextButton.styleFrom(
-                                    fixedSize: Size(290.0 , 65.0) ,
+                                    fixedSize: Size(290.0, 65.0),
                                     padding: const EdgeInsets.all(20.0),
                                     primary: Colors.white,
                                     textStyle: const TextStyle(fontSize: 20),
                                   ),
-                                  onPressed: () {
-                                    final player = AudioCache();
-                                    player.play('welcome.mp3');
+                                  onPressed: () async {
+                                    if (chckpass(password, repass)) {
+                                      try {
+                                        final newUser = await _auth
+                                            .createUserWithEmailAndPassword(
+                                                email: email,
+                                                password: password);
+                                        if (newUser != null) {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) {
+                                                return Otp();
+                                              },
+                                            ),
+                                          );
+                                        }
+                                      } catch (e) {
+                                        log('$e');
+                                      }
+                                    }
 
-                                    Navigator.push(
+                                    /* final player = AudioCache();
+                                    player.play('welcome.mp3'); */
+
+                                    /* Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context){
                                           return Otp();
                                         },
                                       ),
-                                    );
-
+                                    ); */
                                   },
                                   child: const Text(
                                     'Create account',
@@ -197,9 +263,10 @@ class SignUp extends StatelessWidget {
                                       color: const Color(0xffffffff),
                                       height: 1.3846153846153846,
                                     ),
-                                    textHeightBehavior:
-                                    TextHeightBehavior(applyHeightToFirstAscent: false),
-                                    textAlign: TextAlign.center,),
+                                    textHeightBehavior: TextHeightBehavior(
+                                        applyHeightToFirstAscent: false),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                               ],
                             ),
@@ -213,38 +280,28 @@ class SignUp extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context){
+                                    builder: (context) {
                                       return login();
                                     },
                                   ),
                                 );
                                 print("Forgot password clicked");
                               },
-                              child: Text(
-                                  'Already have an account ? ',
+                              child: Text('Already have an account ? ',
                                   style: TextStyle(
-                                      fontSize:15,
+                                      fontSize: 15,
                                       color: Color.fromRGBO(39, 82, 112, 1),
-                                      fontFamily: 'Roboto-Black'
-                                  )
-                              ),
+                                      fontFamily: 'Roboto-Black')),
                             ),
-                          ),//Forgot password
+                          ), //Forgot password
 
                           const SizedBox(height: 10),
-
-
-
-
-
                         ],
                       ),
                     ),
                   ),
-
                 ),
               ),
-
             ],
           ),
         ),
