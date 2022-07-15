@@ -100,7 +100,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
 
     /*AlanVoice.addButton(
-        "81e22f45c2ca97db717b88552dafd9e52e956eca572e1d8b807a3e2338fdd0dc/stage",
+        "1305684c00876da679d8f671d27fae482e956eca572e1d8b807a3e2338fdd0dc/stage",
         buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);*/
 
     /// Update the onCommand handler
