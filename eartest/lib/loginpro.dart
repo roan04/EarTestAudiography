@@ -1,6 +1,7 @@
 import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:eartest/user_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:eartest/login.dart';
 
 class loginprofile extends StatelessWidget {
   const loginprofile({Key? key}) : super(key: key);
@@ -194,7 +195,7 @@ class loginprofile extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context){
-                                      return loginprofile();
+                                      return login();
                                     },
                                   ),
                                 );
